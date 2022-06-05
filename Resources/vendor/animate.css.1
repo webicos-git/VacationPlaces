@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Animate.css | mytravel-html</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Animate.css" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="MyTravel HTML" />
+<meta property="og:description" content="MyTravel HTML" />
+<link rel="canonical" href="https://transvelo.github.io/mytravel-html/assets/vendor/animate.css/" />
+<meta property="og:url" content="https://transvelo.github.io/mytravel-html/assets/vendor/animate.css/" />
+<meta property="og:site_name" content="mytravel-html" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Animate.css" />
+<script type="application/ld+json">
+{"description":"MyTravel HTML","@type":"WebPage","headline":"Animate.css","url":"https://transvelo.github.io/mytravel-html/assets/vendor/animate.css/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/mytravel-html/assets/css/style.css?v=27886fc62ae1c1889b45802573d2f00f849a9aed">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://transvelo.github.io/mytravel-html/">mytravel-html</a></h1>
+      
+
+      <h1 id="animatecss------">Animate.css <a href="https://github.com/daneden/animate.css/releases"><img src="https://img.shields.io/github/release/daneden/animate.css.svg" alt="GitHub release" /></a> <a href="https://cdnjs.com/libraries/animate.css"><img src="https://img.shields.io/cdnjs/v/animate.css.svg" alt="CDNJS" /></a> <a href="https://travis-ci.com/daneden/animate.css"><img src="https://travis-ci.com/daneden/animate.css.svg?branch=master" alt="Build Status" /></a> <a href="https://david-dm.org/daneden/animate.css?type=dev"><img src="https://david-dm.org/daneden/animate.css/dev-status.svg" alt="devDependencies Status" /></a> <a href="https://gitter.im/animate-css/Lobby"><img src="https://img.shields.io/badge/chat-gitter-green.svg" alt="chat" /></a> <a href="https://www.npmjs.com/package/animate.css"><img src="https://badge.fury.io/js/animate.css.svg" alt="npm version" /></a></h1>
+
+<p><em>Just-add-water CSS animation</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">animate.css</code> is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>To install via Bower, simply do the following:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bower <span class="nb">install </span>animate.css <span class="nt">--save</span>
+</code></pre></div></div>
+
+<p>or you can install via npm:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install </span>animate.css <span class="nt">--save</span>
+</code></pre></div></div>
+
+<h2 id="basic-usage">Basic Usage</h2>
+
+<ol>
+  <li>Include the stylesheet on your document’s <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code></li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"animate.min.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<p>Instead of installing you may use the remote version (hosted by <a href="https://cdnjs.com/libraries/animate.css">CDNJS</a>):</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span>
+  <span class="na">href=</span><span class="s">"https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"</span><span class="nt">&gt;</span>
+  <span class="c">&lt;!-- or --&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span>
+  <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<p>You may <a href="https://www.srihash.org/">generate a SRI hash</a> of that particular version and then use it to ensure the file’s integrity; also you can make anonymous requests to CDN by setting the corresponding <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes"><code class="language-plaintext highlighter-rouge">crossorigin</code></a> attribute:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span>
+  <span class="na">href=</span><span class="s">"https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"</span>
+  <span class="na">integrity=</span><span class="s">"sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"</span>
+  <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+  <span class="c">&lt;!-- or --&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span>
+  <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"</span>
+  <span class="na">integrity=</span><span class="s">"sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"</span>
+  <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Add the class <code class="language-plaintext highlighter-rouge">animated</code> to the element you want to animate. You may also want to include the class <code class="language-plaintext highlighter-rouge">infinite</code> for an infinite loop.</p>
+  </li>
+  <li>
+    <p>Finally you need to add one of the following classes:</p>
+  </li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class Name</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bounce</code></td>
+      <td><code class="language-plaintext highlighter-rouge">flash</code></td>
+      <td><code class="language-plaintext highlighter-rouge">pulse</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rubberBand</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">shake</code></td>
+      <td><code class="language-plaintext highlighter-rouge">headShake</code></td>
+      <td><code class="language-plaintext highlighter-rouge">swing</code></td>
+      <td><code class="language-plaintext highlighter-rouge">tada</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">wobble</code></td>
+      <td><code class="language-plaintext highlighter-rouge">jello</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bounceIn</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bounceInDown</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bounceInLeft</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bounceInRight</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bounceInUp</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bounceOut</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bounceOutDown</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bounceOutLeft</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bounceOutRight</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bounceOutUp</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fadeIn</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fadeInDown</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fadeInDownBig</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fadeInLeft</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fadeInLeftBig</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fadeInRight</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fadeInRightBig</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fadeInUp</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fadeInUpBig</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fadeOut</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fadeOutDown</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fadeOutDownBig</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fadeOutLeft</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fadeOutLeftBig</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fadeOutRight</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fadeOutRightBig</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fadeOutUp</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fadeOutUpBig</code></td>
+      <td><code class="language-plaintext highlighter-rouge">flipInX</code></td>
+      <td><code class="language-plaintext highlighter-rouge">flipInY</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">flipOutX</code></td>
+      <td><code class="language-plaintext highlighter-rouge">flipOutY</code></td>
+      <td><code class="language-plaintext highlighter-rouge">lightSpeedIn</code></td>
+      <td><code class="language-plaintext highlighter-rouge">lightSpeedOut</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rotateIn</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rotateInDownLeft</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rotateInDownRight</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rotateInUpLeft</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rotateInUpRight</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rotateOut</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rotateOutDownLeft</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rotateOutDownRight</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rotateOutUpLeft</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rotateOutUpRight</code></td>
+      <td><code class="language-plaintext highlighter-rouge">hinge</code></td>
+      <td><code class="language-plaintext highlighter-rouge">jackInTheBox</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rollIn</code></td>
+      <td><code class="language-plaintext highlighter-rouge">rollOut</code></td>
+      <td><code class="language-plaintext highlighter-rouge">zoomIn</code></td>
+      <td><code class="language-plaintext highlighter-rouge">zoomInDown</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">zoomInLeft</code></td>
+      <td><code class="language-plaintext highlighter-rouge">zoomInRight</code></td>
+      <td><code class="language-plaintext highlighter-rouge">zoomInUp</code></td>
+      <td><code class="language-plaintext highlighter-rouge">zoomOut</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">zoomOutDown</code></td>
+      <td><code class="language-plaintext highlighter-rouge">zoomOutLeft</code></td>
+      <td><code class="language-plaintext highlighter-rouge">zoomOutRight</code></td>
+      <td><code class="language-plaintext highlighter-rouge">zoomOutUp</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">slideInDown</code></td>
+      <td><code class="language-plaintext highlighter-rouge">slideInLeft</code></td>
+      <td><code class="language-plaintext highlighter-rouge">slideInRight</code></td>
+      <td><code class="language-plaintext highlighter-rouge">slideInUp</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">slideOutDown</code></td>
+      <td><code class="language-plaintext highlighter-rouge">slideOutLeft</code></td>
+      <td><code class="language-plaintext highlighter-rouge">slideOutRight</code></td>
+      <td><code class="language-plaintext highlighter-rouge">slideOutUp</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">heartBeat</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Full example:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"animated infinite bounce delay-2s"</span><span class="nt">&gt;</span>Example<span class="nt">&lt;/h1&gt;</span>
+</code></pre></div></div>
+
+<p><a href="https://daneden.github.io/animate.css/">Check out all the animations here!</a></p>
+
+<h2 id="usage">Usage</h2>
+
+<p>To use animate.css in your website, simply drop the stylesheet into your document’s <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code>, and add the class <code class="language-plaintext highlighter-rouge">animated</code> to an element, along with any of the animation names. That’s it! You’ve got a CSS animated element. Super!</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"animate.min.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<p>or use the version hosted by <a href="https://cdnjs.com/libraries/animate.css">CDNJS</a></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<p>You can do a whole bunch of other stuff with animate.css when you combine it with jQuery or add your own CSS rules. Dynamically add animations using jQuery with ease:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#yourElement</span><span class="dl">'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">animated bounceOutLeft</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>You can also detect when an animation ends:</p>
+
+<!--
+Before you make changes to this file, you should know that $('#yourElement').one() is *NOT A TYPO*
+
+http://api.jquery.com/one/
+-->
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// See https://github.com/daneden/animate.css/issues/644</span>
+<span class="kd">var</span> <span class="nx">animationEnd</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">animations</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">animation</span><span class="p">:</span> <span class="dl">'</span><span class="s1">animationend</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">OAnimation</span><span class="p">:</span> <span class="dl">'</span><span class="s1">oAnimationEnd</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">MozAnimation</span><span class="p">:</span> <span class="dl">'</span><span class="s1">mozAnimationEnd</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">WebkitAnimation</span><span class="p">:</span> <span class="dl">'</span><span class="s1">webkitAnimationEnd</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">};</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">t</span> <span class="k">in</span> <span class="nx">animations</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">[</span><span class="nx">t</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">animations</span><span class="p">[</span><span class="nx">t</span><span class="p">];</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">})(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">));</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#yourElement</span><span class="dl">'</span><span class="p">).</span><span class="nx">one</span><span class="p">(</span><span class="nx">animationEnd</span><span class="p">,</span> <span class="nx">doSomething</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><a href="https://www.youtube.com/watch?v=CBQGl6zokMs">View a video tutorial</a> on how to use Animate.css with jQuery here.</p>
+
+<p><strong>Note:</strong> <code class="language-plaintext highlighter-rouge">jQuery.one()</code> is used when you want to execute the event handler at most <em>once</em>. More information <a href="http://api.jquery.com/one/">here</a>.</p>
+
+<p>You can also extend jQuery to add a function that does it all for you:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="na">animateCss</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">animationName</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">animationEnd</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">animations</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">animation</span><span class="p">:</span> <span class="dl">'</span><span class="s1">animationend</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">OAnimation</span><span class="p">:</span> <span class="dl">'</span><span class="s1">oAnimationEnd</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">MozAnimation</span><span class="p">:</span> <span class="dl">'</span><span class="s1">mozAnimationEnd</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">WebkitAnimation</span><span class="p">:</span> <span class="dl">'</span><span class="s1">webkitAnimationEnd</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">};</span>
+
+      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">t</span> <span class="k">in</span> <span class="nx">animations</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">[</span><span class="nx">t</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nx">animations</span><span class="p">[</span><span class="nx">t</span><span class="p">];</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">})(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">));</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">animated </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">animationName</span><span class="p">).</span><span class="nx">one</span><span class="p">(</span><span class="nx">animationEnd</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">animated </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">animationName</span><span class="p">);</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">callback</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">function</span><span class="dl">'</span><span class="p">)</span> <span class="nx">callback</span><span class="p">();</span>
+    <span class="p">});</span>
+
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>And use it like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#yourElement</span><span class="dl">'</span><span class="p">).</span><span class="nx">animateCss</span><span class="p">(</span><span class="dl">'</span><span class="s1">bounce</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">or</span><span class="p">;</span>
+<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#yourElement</span><span class="dl">'</span><span class="p">).</span><span class="nx">animateCss</span><span class="p">(</span><span class="dl">'</span><span class="s1">bounce</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Do somthing after animation</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>You can change the duration of your animations, add a delay or change the number of times that it plays:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#yourElement</span> <span class="p">{</span>
+  <span class="py">-vendor-animation-duration</span><span class="p">:</span> <span class="m">3s</span><span class="p">;</span>
+  <span class="py">-vendor-animation-delay</span><span class="p">:</span> <span class="m">2s</span><span class="p">;</span>
+  <span class="py">-vendor-animation-iteration-count</span><span class="p">:</span> <span class="n">infinite</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><em>Note: be sure to replace “vendor” in the CSS with the applicable vendor prefixes (webkit, moz, etc)</em></p>
+
+<h2 id="define-delay-and-speed-using-class">Define <em>Delay</em> and <em>Speed</em> using Class</h2>
+
+<h4 id="delay-class">Delay Class</h4>
+
+<p>You can also add delays directly on the element’s class attribute, just like this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"animated bounce delay-2s"</span><span class="nt">&gt;</span>Example<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class Name</th>
+      <th>Delay Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delay-2s</code></td>
+      <td><code class="language-plaintext highlighter-rouge">2s</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delay-3s</code></td>
+      <td><code class="language-plaintext highlighter-rouge">3s</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delay-4s</code></td>
+      <td><code class="language-plaintext highlighter-rouge">4s</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delay-5s</code></td>
+      <td><code class="language-plaintext highlighter-rouge">5s</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><em><strong>Note</strong>: The default delays are from 1 second to 5 seconds only. If you want to add customized delays, you can add it directly to your css</em></p>
+</blockquote>
+
+<h4 id="slow-slower-fast-and-faster-class">Slow, Slower, Fast, and Faster Class</h4>
+
+<p>You can control the speed of the animation by adding these classes, as a sample below:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"animated bounce faster"</span><span class="nt">&gt;</span>Example<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class Name</th>
+      <th>Speed Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">slow</code></td>
+      <td><code class="language-plaintext highlighter-rouge">2s</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">slower</code></td>
+      <td><code class="language-plaintext highlighter-rouge">3s</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fast</code></td>
+      <td><code class="language-plaintext highlighter-rouge">800ms</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">faster</code></td>
+      <td><code class="language-plaintext highlighter-rouge">500ms</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><em><strong>Note</strong>: The default speed is <code class="language-plaintext highlighter-rouge">1s</code> which is you don’t need to put any class. If you want to add a custom duration, you can add it directly to your css instead</em></p>
+</blockquote>
+
+<h2 id="custom-builds">Custom Builds</h2>
+
+<p>Animate.css is powered by <a href="http://gulpjs.com/">gulp.js</a>, and you can create custom builds pretty easily. First of all, you’ll need Gulp and all other dependencies:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>path/to/animate.css/
+<span class="nv">$ </span><span class="nb">sudo </span>npm <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>Next, run <code class="language-plaintext highlighter-rouge">gulp</code> to compile your custom builds. For example, if you want only some of the “attention seekers”, simply edit the <code class="language-plaintext highlighter-rouge">animate-config.json</code> file to select only the animations you want to use.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">attention_seekers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">bounce</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">flash</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">pulse</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">shake</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headShake</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">swing</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">tada</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">wobble</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">jello</span><span class="dl">"</span><span class="p">:</span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="accessibility">Accessibility</h2>
+
+<p>Animate.css supports the <a href="https://webkit.org/blog/7551/responsive-design-for-motion/"><code class="language-plaintext highlighter-rouge">prefers-reduced-motion</code> media query</a> so that users with motion sensitivity can opt out of animations. On supported platforms (currently only OSX Safari and iOS Safari), users can select “reduce motion” on their operating system preferences and it will turn off CSS transitions for them without any further work required.</p>
+
+<h2 id="license">License</h2>
+
+<p>Animate.css is licensed under the MIT license. (http://opensource.org/licenses/MIT)</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Pull requests are the way to go here. I apologise in advance for the slow action on pull requests and issues. I only have two rules for submitting a pull request: match the naming convention (camelCase, categorised [fades, bounces, etc]) and let us see a demo of submitted animations in a <a href="http://codepen.io">pen</a>. That last one is important.</p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>
