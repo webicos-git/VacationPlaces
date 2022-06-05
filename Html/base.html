@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="favicon.png">
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
@@ -256,7 +256,8 @@
 </header>
 <!-- ========== End HEADER ========== -->
 
-{% block content %}{% endblock content %}
+{% block content %}
+{% endblock content %}
 <!-- ========== FOOTER ========== -->
 <footer class="footer mt-4">
     <div class="space-bottom-2 space-top-1">
