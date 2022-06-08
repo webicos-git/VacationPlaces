@@ -18,5 +18,7 @@ from django.urls import path
 from Hotels import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index)
+    path('',views.index),
+    path('hotels', views.hotelListing),
+    path('hotelSingle', views.hotelSingle)
 ]
