@@ -40130,7 +40130,7 @@ label.btn {
 
 .gradient-overlay-half-black-gradient::before {
   background-color: #18181a;
-  opacity: 0.5;
+  opacity: 0.1;
 }
 
 .gradient-overlay-half-gray-gradient::before {
