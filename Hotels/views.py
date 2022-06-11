@@ -5,9 +5,9 @@ from .models import Hotels
 
 def index(request):
     hotels = Hotels.objects.all().values()
-    print(hotels)
-    for h in hotels:
-        print(h)
+    # print(hotels)
+    # for h in hotels:
+    #     print(h)
 
     return render(request, 'index.html')
 
