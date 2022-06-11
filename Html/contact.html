@@ -51,7 +51,8 @@
         <h2 class="section-title text-black font-size-30 font-weight-bold mb-5 pb-xl-1">Sends us a Message</h2>
       </div>
       <div class="comment-section max-width-810 mx-auto">
-        <form class="js-validate" novalidate="novalidate">
+        <form method="POST" class="js-validate" novalidate="novalidate">
+          {% csrf_token %}
           <div class="row">
             <!-- Input -->
             <div class="col-sm-6 mb-5">
