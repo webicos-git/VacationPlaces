@@ -14,6 +14,7 @@ def index(request):
 
 def hotelListing(request):
     hotels = Hotels.objects.all().values()
+    
     myDict = {
         'hotels': hotels,
         'total': len(hotels),
