@@ -29,3 +29,6 @@ def hotelSingle(request, id):
         'hotel': hotel
     }
     return render(request, 'single-hotel.html', myDict)
+
+def contact(request):
+    return render(request, 'contact.html')
