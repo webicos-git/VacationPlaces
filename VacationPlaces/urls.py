@@ -24,5 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('hotels', views.hotelListing),
-    path('hotelSingle/<str:id>/', views.hotelSingle)
+    path('hotelSingle/<str:id>/', views.hotelSingle,name='hotelSingle')
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
