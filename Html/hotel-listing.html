@@ -1582,15 +1582,23 @@
                           </div>
                         </div>
                       </div>
-                      <a href="../hotels/hotel-single-v1.html" class="card-title font-size-17 font-weight-medium text-dark">{{ hotel.name }}</a>
+                      <a href="{% url 'hotelSingle' hotel.id %}" class="card-title font-size-17 font-weight-medium text-dark">{{ hotel.name }}</a>
                       <div class="mt-2 mb-3">
                         <span class="badge badge-pill badge-primary py-1 px-2 font-size-14 border-radius-3 font-weight-normal">4.6/5</span>
-<!--                        <span class="font-size-14 text-gray-1 ml-2">(166 reviews)</span>-->
+                        <!-- <span class="font-size-14 text-gray-1 ml-2">(166 reviews)</span> -->
                       </div>
                       <div class="mb-0">
                         <span class="mr-1 font-size-14 text-gray-1">From</span>
                         <span class="font-weight-bold">${{ hotel.pricingStarAt }}</span>
                         <span class="font-size-14 text-gray-1"> / night</span>
+                      </div>
+                      <div class="contact text-end">
+                        <a href="tel:{{ hotel.callNumber }}" target="_blank">
+                          <img src="{% static 'images/call.png' %}" class="me-2" width="35" alt="Call Icon">
+                        </a>
+                        <a href="https://wa.me/91{{ hotel.whatsappNumber }}" target="_blank">
+                          <img src="{% static 'images/whatsapp.png' %}" width="35" alt="Whatsapp Icon">
+                        </a>
                       </div>
                     </div>
                   </div>
