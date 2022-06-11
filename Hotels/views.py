@@ -1,20 +1,16 @@
 from django.shortcuts import render
-from .models import Hotels
+from .models import Hotels, Images, ContactUs
 # Create your views here.
 
 
 def index(request):
     hotels = Hotels.objects.all().values()
-    # print(hotels)
-    # for h in hotels:
-    #     print(h)
-
     return render(request, 'index.html')
 
 
 def hotelListing(request):
     hotels = Hotels.objects.all().values()
-    
+
     myDict = {
         'hotels': hotels,
         'total': len(hotels),
@@ -30,5 +26,13 @@ def hotelSingle(request, id):
     }
     return render(request, 'single-hotel.html', myDict)
 
+
 def contact(request):
+    if request.method == 'POST':
+        print(request.POST)
+        data = request.POST
+        contactUs = ContactUs(
+            name=data['name'], email=data['email'], message=data['text'])
+        contactUs.save()
+        return render(request, 'index.html', {'message': "Form Submitted Successfully"})
     return render(request, 'contact.html')

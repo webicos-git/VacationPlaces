@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+import datetime
 
 
 class Hotels(models.Model):
@@ -58,8 +59,23 @@ class Hotels(models.Model):
     pricingStarAt = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
     whatToExpect = models.TextField()
+    def __str__(self):
+        return self.name
 
 
 class Images(models.Model):
     hotel = models.ForeignKey(Hotels, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='hotelimages/', null=True, blank=True)
+    def __str__(self):
+        return self.hotel.name
+
+
+class ContactUs(models.Model):
+    name = models.CharField(max_length=500)
+    email = models.CharField(max_length=500)
+    message = models.TextField()
+    date = date = models.DateTimeField(
+        default=datetime.datetime.now(), blank=True)
+
+    def __str__(self):
+        return self.name
