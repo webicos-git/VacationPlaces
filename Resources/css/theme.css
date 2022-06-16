@@ -23851,7 +23851,7 @@ button:focus {
 .u-header__navbar-brand > img {
   padding-top: 0;
   padding-bottom: 0;
-  width: auto;
+  width: 75px;
 }
 
 .u-header__navbar-brand-center {
