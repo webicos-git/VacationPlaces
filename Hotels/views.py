@@ -1,15 +1,64 @@
 from django.shortcuts import render
-from .models import Hotels, Images, ContactUs
+from .models import Hotels, Images, ContactUs,Search
 # Create your views here.
 
 
 def index(request):
     hotels = Hotels.objects.all().values()
+
+    if request.method == 'POST':
+        print(request.POST)
+        data=request.POST
+        search=Search(destination=data['destination'],checkInCheckOut=data['checkincheckout'],rooms=data['rooms'])
+        search.save()
+
+        final=[]
+        rooms=[]
+
+        for hotel in hotels:
+            if int(hotel['bedroomsAvailable'])>=int(data['rooms']):
+                rooms.append(hotel)
+
+        for hotel in rooms:
+            name=hotel['name']    
+            if data['destination'].lower() in name.lower() or data['destination'].lower() in hotel['location'].lower():
+                final.append(hotel)
+
+        myDict = {
+        'hotels': final,
+        'total': len(final),
+        }
+        return render(request, 'hotel-listing.html', myDict)
+
+
     return render(request, 'index.html')
 
 
 def hotelListing(request):
     hotels = Hotels.objects.all().values()
+    if request.method == 'POST':
+        print(request.POST)
+        data=request.POST
+        search=Search(destination=data['destination'],checkInCheckOut=data['checkincheckout'],rooms=data['rooms'])
+        search.save()
+
+        final=[]
+        rooms=[]
+
+        for hotel in hotels:
+            if int(hotel['bedroomsAvailable'])>=int(data['rooms']):
+                rooms.append(hotel)
+
+        for hotel in rooms:
+            name=hotel['name']    
+            if data['destination'].lower() in name.lower() or data['destination'].lower() in hotel['location'].lower():
+                final.append(hotel)
+
+        myDict = {
+        'hotels': final,
+        'total': len(final),
+        }
+        return render(request, 'hotel-listing.html', myDict)
 
     myDict = {
         'hotels': hotels,
@@ -19,6 +68,7 @@ def hotelListing(request):
 
 
 def hotelSingle(request, id):
+
     hotel = Hotels.objects.all().get(id=id)
     hotels = Hotels.objects.all().values()
     print(type(hotel))

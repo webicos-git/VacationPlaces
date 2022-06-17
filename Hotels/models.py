@@ -44,6 +44,9 @@ class Hotels(models.Model):
     pricingStarAt = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
     whatToExpect = models.TextField()
+
+    iframe=models.TextField(default="")
+    ratings= models.IntegerField(default=0)
     def __str__(self):
         return self.name
 
@@ -64,3 +67,14 @@ class ContactUs(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Search(models.Model):
+    destination = models.CharField(max_length=500)
+    checkInCheckOut=models.CharField(max_length=500)
+    rooms= models.IntegerField()
+    date = date = models.DateTimeField(
+        default=datetime.datetime.now(), blank=True)
+    def __str__(self):
+        return self.destination    
+
