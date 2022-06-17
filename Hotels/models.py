@@ -9,21 +9,6 @@ class Hotels(models.Model):
     id = models.AutoField(primary_key=True)
     description = models.TextField()
     bedroomsAvailable = models.CharField(max_length=100)
-    # facilities = (
-    #     ('Wifi', 'WIFI'),
-    #     ('coffee', 'Coffee'),
-    #     ('breakfast', 'Breakfast'),
-    #     ('ac rooms', 'Ac rooms'),
-    #     ('water', 'Water'),
-    #     ('clean & sanitized rooms', 'Clean & sanitized rooms'),
-    #     ('pick up', 'Pick up'),
-    #     ('swimming pool', 'Swimming pool'),
-    #     ('barbeque', 'Barbeque'),
-    #     ('garden', 'Garden'),
-    #     ('parking', 'Parking')
-    # )
-    # facilitiesAvailable = models.CharField(
-    #     max_length=100, choices=facilities)
     WIFI = models.BooleanField(default=False)
     SwimmingPool = models.BooleanField(default=False)
     Garden = models.BooleanField(default=False)
