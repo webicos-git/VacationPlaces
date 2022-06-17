@@ -7,7 +7,7 @@
     </script>
     {% endif %}
     <!-- Title -->
-  <title>Vacation Places</title>
+  <title>Vacation Places - {% block title %}{% endblock %}</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -51,7 +51,7 @@
             <a href="tel:9930801901" class="u-header__navbar-link">+91 99308 01901</a>
           </li>
           <li class="list-inline-item mr-0">
-            <a href="mailto:info@mytravel.com" class="u-header__navbar-link">vacationplacesofficial@gmail.com</a>
+            <a href="mailto:vacationplacesofficial@gmail.com" class="u-header__navbar-link">vacationplacesofficial@gmail.com</a>
           </li>
         </ul>
         <div class="ml-auto d-flex align-items-center">
@@ -411,7 +411,7 @@
   <!-- End Go to Top -->
   
   <!-- JS Global Compulsory -->
-
+  <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/jquery-migrate/dist/jquery-migrate.min.js' %}"></script>
   <script src="{% static 'vendor/popper.js/dist/umd/popper.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/bootstrap.min.js' %}"></script>
@@ -438,6 +438,7 @@
   <script src="{% static 'js/components/hs.go-to.js' %}"></script>
   <script src="{% static 'js/components/hs.slick-carousel.js' %}"></script>
   <script src="{% static 'js/components/hs.quantity-counter.js' %}"></script>
+  <script src="{% static 'js/components/hs.g-map.js' %}"></script>
   <script src="{% static 'js/components/hs.video-player.js' %}"></script>
   <script src="{% static 'js/components/hs.svg-injector.js' %}"></script>
   <script src="{% static 'js/components/hs.fancybox.js' %}"></script>
@@ -460,7 +461,7 @@
         $('#jsPreloader').fadeOut(500)
       }, 800);
     });
-  
+
     $(document).on('ready', function () {
       // initialization of header
       $.HSCore.components.HSHeader.init($('#header'));

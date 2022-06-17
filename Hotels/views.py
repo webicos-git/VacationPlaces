@@ -20,9 +20,11 @@ def hotelListing(request):
 
 def hotelSingle(request, id):
     hotel = Hotels.objects.all().get(id=id)
+    hotels = Hotels.objects.all().values()
     print(type(hotel))
     myDict = {
-        'hotel': hotel
+        'hotel': hotel,
+        'hotels': hotels
     }
     return render(request, 'single-hotel.html', myDict)
 

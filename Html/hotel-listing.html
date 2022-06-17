@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %}Hotels{% endblock %}
 {% block content %}
 {% load static %}
 <!-- ========== MAIN CONTENT ========== -->
@@ -31,9 +32,9 @@
                       <div class="border-bottom border-width-2 border-color-1">
                         <div id="datepickerWrapperPick" class="u-datepicker input-group">
                           <div class="input-group-prepend">
-                                                                <span class="d-flex align-items-center mr-2 font-size-21">
-                                                                  <i class="flaticon-calendar text-primary font-weight-semi-bold"></i>
-                                                                </span>
+                            <span class="d-flex align-items-center mr-2 font-size-21">
+                              <i class="flaticon-calendar text-primary font-weight-semi-bold"></i>
+                            </span>
                           </div>
                           <input class="js-range-datepicker font-weight-medium font-size-15 ml-1 shadow-none form-control hero-form bg-transparent border-0 flatpickr-input p-0" type="text" placeholder="July 7/2019" aria-label="July 7/2019"
                                  data-rp-wrapper="#datepickerWrapperPick"
@@ -522,6 +523,7 @@
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade" id="pills-three-example1" role="tabpanel" aria-labelledby="pills-three-example1-tab" data-target-group="groups">
               <ul class="d-block list-unstyled products-group prodcut-list-view">
+                {% for hotel in hotels %}
                 <li class="card mb-5 overflow-hidden">
                   <div class="product-item__outer w-100">
                     <div class="row">
@@ -542,27 +544,27 @@
                               </div>
                               <div class="js-slide">
                                 <a href="../hotels/hotel-single-v1.html" class="d-block gradient-overlay-half-bg-gradient-v5">
-                                  <img class="img-fluid min-height-230 card-img-top" src="../../assets/img/300x230/img59.jpg">
+                                  <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
                                 </a>
                               </div>
                               <div class="js-slide">
                                 <a href="../hotels/hotel-single-v1.html" class="d-block gradient-overlay-half-bg-gradient-v5">
-                                  <img class="img-fluid min-height-230 card-img-top" src="../../assets/img/300x230/img60.jpg">
+                                  <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
                                 </a>
                               </div>
                               <div class="js-slide">
                                 <a href="../hotels/hotel-single-v1.html" class="d-block gradient-overlay-half-bg-gradient-v5">
-                                  <img class="img-fluid min-height-230 card-img-top" src="../../assets/img/300x230/img61.jpg">
+                                  <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
                                 </a>
                               </div>
                               <div class="js-slide">
                                 <a href="../hotels/hotel-single-v1.html" class="d-block gradient-overlay-half-bg-gradient-v5">
-                                  <img class="img-fluid min-height-230 card-img-top" src="../../assets/img/300x230/img62.jpg">
+                                  <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
                                 </a>
                               </div>
                               <div class="js-slide">
                                 <a href="../hotels/hotel-single-v1.html" class="d-block gradient-overlay-half-bg-gradient-v5">
-                                  <img class="img-fluid min-height-230 card-img-top" src="../../assets/img/300x230/img63.jpg">
+                                  <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
                                 </a>
                               </div>
                             </div>
@@ -582,21 +584,13 @@
                               <small class="fas fa-star font-size-10"></small>
                           </span>
                           </div>
-
-                          <div class="position-absolute top-0 right-0 pr-md-3 d-none d-md-block">
-                            <button type="button" class="btn btn-sm btn-icon rounded-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Save for later">
-                              <span class="flaticon-heart-1 font-size-20"></span>
-                            </button>
-                          </div>
                           <a href="/hotelSingle">
-                            <span class="font-weight-medium font-size-17 text-dark d-flex mb-1">Empire Prestige Causeway Bay </span>
+                            <span class="font-weight-medium font-size-17 text-dark d-flex mb-1">{{ hotel.name }}</span>
                           </a>
                           <div class="card-body p-0">
                             <a href="../hotels/hotel-single-v1.html" class="d-block mb-3">
                               <div class="d-flex flex-wrap flex-xl-nowrap align-items-center font-size-14 text-gray-1">
-                                <i class="icon flaticon-placeholder mr-2 font-size-20"></i> Greater London, United Kingdom
-                                <small class="px-1 font-size-15"> - </small>
-                                <span class="text-primary font-size-14">View on map</span>
+                                <i class="icon flaticon-placeholder mr-2 font-size-20"></i> {{ hotel.location }}
                               </div>
                             </a>
                             <ul class="list-unstyled mb-2 d-md-flex flex-lg-wrap flex-xl-nowrap">
@@ -605,9 +599,6 @@
                               </li>
                               <li class="border border-dark rounded-xs d-flex align-items-center text-lh-1 py-1 px-2 mr-md-2 mb-2 mb-md-0 mb-lg-2 mb-xl-0 mb-md-0">
                                 <span class="font-weight-normal font-size-14">Free Cancellation</span>
-                              </li>
-                              <li class="border border-dark rounded-xs d-flex align-items-center text-lh-1 py-1 px-2 mb-2 mb-md-0">
-                                <span class="font-weight-normal font-size-14">Pay at the hotel</span>
                               </li>
                             </ul>
                             <ul class="list-unstyled d-md-flex">
@@ -637,7 +628,7 @@
                           </div>
                           <div class="mb-0">
                             <span class="mr-1 font-size-14 text-gray-1">From</span>
-                            <span class="font-weight-bold">£350.00</span>
+                            <span class="font-weight-bold">₹{{ hotel.pricingStarAt }}</span>
                             <span class="font-size-14 text-gray-1"> / night</span>
                           </div>
                         </div>
@@ -645,32 +636,8 @@
                     </div>
                   </div>
                 </li>
+                {% endfor %}
               </ul>
-              <div class="text-center text-md-left font-size-14 mb-3 text-lh-1">Showing 1–15</div>
-              <nav aria-label="Page navigation">
-                <ul class="list-pagination-1 pagination border border-color-4 rounded-sm overflow-auto overflow-xl-visible justify-content-md-center align-items-center py-2 mb-0">
-                  <li class="page-item">
-                    <a class="page-link border-right rounded-0 text-gray-5" href="#" aria-label="Previous">
-                      <i class="flaticon-left-direction-arrow font-size-10 font-weight-bold"></i>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                  </li>
-                  <li class="page-item"><a class="page-link font-size-14" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link font-size-14 active" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link font-size-14" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link font-size-14" href="#">4</a></li>
-                  <li class="page-item"><a class="page-link font-size-14" href="#">5</a></li>
-                  <li class="page-item disabled"><a class="page-link font-size-14" href="#">...</a></li>
-                  <li class="page-item"><a class="page-link font-size-14" href="#">66</a></li>
-                  <li class="page-item"><a class="page-link font-size-14" href="#">67</a></li>
-                  <li class="page-item">
-                    <a class="page-link border-left rounded-0 text-gray-5" href="#" aria-label="Next">
-                      <i class="flaticon-right-thin-chevron font-size-10 font-weight-bold"></i>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
             </div>
             <div class="tab-pane fade show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
               <div class="row">
@@ -715,7 +682,7 @@
                       </div>
                       <div class="mb-0">
                         <span class="mr-1 font-size-14 text-gray-1">From</span>
-                        <span class="font-weight-bold">${{ hotel.pricingStarAt }}</span>
+                        <span class="font-weight-bold">₹{{ hotel.pricingStarAt }}</span>
                         <span class="font-size-14 text-gray-1"> / night</span>
                       </div>
                       <div class="contact text-end">
