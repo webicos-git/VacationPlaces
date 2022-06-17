@@ -12,6 +12,10 @@
             <i class="far fa-caret-square-down text-primary font-size-20 card-btn-arrow ml-0"></i>
             <span class="text-primary ml-2">Sidebar</span>
           </button>
+          <form method="POST" action="">
+            {% csrf_token %}
+
+         
           <div id="sidebar" class="collapse navbar-collapse">
             <div class="mb-6 w-100">
               <div class="pb-4 mb-2">
@@ -22,7 +26,7 @@
                     <div class="mb-4">
                       <div class="input-group border-bottom border-width-2 border-color-1">
                         <i class="flaticon-pin-1 d-flex align-items-center mr-2 text-primary font-weight-semi-bold font-size-22"></i>
-                        <input type="text" class="form-control font-weight-medium font-size-15 shadow-none hero-form border-0 p-0" placeholder="Where are you going?" aria-label="Keyword or title" aria-describedby="keywordInputAddon">
+                        <input type="text" name="destination" class="form-control font-weight-medium font-size-15 shadow-none hero-form border-0 p-0" placeholder="Where are you going?" aria-label="Keyword or title" aria-describedby="keywordInputAddon">
                       </div>
                     </div>
                     <!-- End Input -->
@@ -40,7 +44,9 @@
                                  data-rp-wrapper="#datepickerWrapperPick"
                                  data-rp-type="range"
                                  data-rp-date-format="M d / Y"
-                                 data-rp-default-date='["Jul 7 / 2020", "Aug 25 / 2020"]'>
+                                 name="checkincheckout"
+                                 data-rp-default-date='["Jul 7 / 2020", "Aug 25 / 2020"]'> 
+                                 
                         </div>
                         <!-- End Datepicker -->
                       </div>
@@ -74,7 +80,7 @@
                                 <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
                                   <small class="fas fa-minus btn-icon__inner"></small>
                                 </a>
-                                <input class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" value="1">
+                                <input name="rooms" class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" value="1">
                                 <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
                                   <small class="fas fa-plus btn-icon__inner"></small>
                                 </a>
@@ -123,6 +129,7 @@
                   </div>
                 </div>
               </div>
+            </form>
 
               <div class="sidenav border border-color-8 rounded-xs">
                 <!-- Accordiaon -->

@@ -45,12 +45,13 @@
             <!-- Search Jobs Form -->
             <div class="card border-0 tab-shadow">
               <div class="card-body">
-                <form class="js-validate">
+                <form method="POST" class="js-validate">
+                  {% csrf_token %}
                   <div class="row d-block nav-select d-lg-flex mb-lg-3 px-2 px-lg-3 align-items-end">
                     <div class="col-sm-12 col-lg-3dot6 col-xl-3gdot5 mb-4 mb-lg-0">
                       <span class="d-block text-gray-1 font-weight-normal text-left mb-0">Destination or Hotel Name</span>
                       <!-- Select -->
-                      <select class="js-select selectpicker dropdown-select tab-dropdown col-12 pl-0 flaticon-pin-1 d-flex align-items-center text-primary font-weight-semi-bold" title="Where are you going?"
+                      <select name="destination" class="js-select selectpicker dropdown-select tab-dropdown col-12 pl-0 flaticon-pin-1 d-flex align-items-center text-primary font-weight-semi-bold" title="Where are you going?"
                               data-style=""
                               data-live-search="true"
                               data-searchbox-classes="input-group-sm">
@@ -102,6 +103,7 @@
                                  data-rp-wrapper="#datepickerWrapperFromOne"
                                  data-rp-type="range"
                                  data-rp-date-format="M d / Y"
+                                 name="checkincheckout"
                                  data-rp-default-date='["Jul 7 / 2020", "Aug 25 / 2020"]'>
                         </div>
                         <!-- End Datepicker -->
@@ -135,7 +137,7 @@
                               <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
                                 <small class="fas fa-minus btn-icon__inner"></small>
                               </a>
-                              <input class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" value="1">
+                              <input name="rooms" class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" value="1">
                               <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
                                 <small class="fas fa-plus btn-icon__inner"></small>
                               </a>
