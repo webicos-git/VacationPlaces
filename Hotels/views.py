@@ -38,42 +38,43 @@ def index(request):
 def hotelListing(request):
     hotels = Hotels.objects.all().values()
     # print("response=",response1)
-    if request.session['resp'] is not None:
-        response1 = request.session['resp']
+    try:
+        if request.session['resp'] is not None:
+            response1 = request.session['resp']
 
-        request.session['resp'] = None
-        return render(request, 'hotel-listing.html', response1)
+            request.session['resp'] = None
+            return render(request, 'hotel-listing.html', response1)
+    except:
+        if request.method == 'POST':
+            print(request.POST)
+            data = request.POST
+            search = Search(destination=data['destination'],
+                            checkInCheckOut=data['checkincheckout'], rooms=data['rooms'])
+            search.save()
 
-    if request.method == 'POST':
-        print(request.POST)
-        data = request.POST
-        search = Search(destination=data['destination'],
-                        checkInCheckOut=data['checkincheckout'], rooms=data['rooms'])
-        search.save()
+            final = []
+            rooms = []
 
-        final = []
-        rooms = []
+            for hotel in hotels:
+                if int(hotel['bedroomsAvailable']) >= int(data['rooms']):
+                    rooms.append(hotel)
 
-        for hotel in hotels:
-            if int(hotel['bedroomsAvailable']) >= int(data['rooms']):
-                rooms.append(hotel)
+            for hotel in rooms:
+                name = hotel['name']
+                if data['destination'].lower() in name.lower() or data['destination'].lower() in hotel['location'].lower():
+                    final.append(hotel)
 
-        for hotel in rooms:
-            name = hotel['name']
-            if data['destination'].lower() in name.lower() or data['destination'].lower() in hotel['location'].lower():
-                final.append(hotel)
+            myDict = {
+                'hotels': final,
+                'total': len(final),
+            }
+            return render(request, 'hotel-listing.html', myDict)
 
         myDict = {
-            'hotels': final,
-            'total': len(final),
+            'hotels': hotels,
+            'total': len(hotels),
         }
         return render(request, 'hotel-listing.html', myDict)
-
-    myDict = {
-        'hotels': hotels,
-        'total': len(hotels),
-    }
-    return render(request, 'hotel-listing.html', myDict)
 
 
 def hotelSingle(request, id):
