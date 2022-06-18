@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Hotels, Images, ContactUs,Search
+from django.shortcuts import render, redirect
+from .models import Hotels, Images, ContactUs, Search
 # Create your views here.
 
 
@@ -8,55 +8,64 @@ def index(request):
 
     if request.method == 'POST':
         print(request.POST)
-        data=request.POST
-        search=Search(destination=data['destination'],checkInCheckOut=data['checkincheckout'],rooms=data['rooms'])
+        data = request.POST
+        search = Search(destination=data['destination'],
+                        checkInCheckOut=data['checkincheckout'], rooms=data['rooms'])
         search.save()
 
-        final=[]
-        rooms=[]
+        final = []
+        rooms = []
 
         for hotel in hotels:
-            if int(hotel['bedroomsAvailable'])>=int(data['rooms']):
+            if int(hotel['bedroomsAvailable']) >= int(data['rooms']):
                 rooms.append(hotel)
 
         for hotel in rooms:
-            name=hotel['name']    
+            name = hotel['name']
             if data['destination'].lower() in name.lower() or data['destination'].lower() in hotel['location'].lower():
                 final.append(hotel)
 
         myDict = {
-        'hotels': final,
-        'total': len(final),
+            'hotels': final,
+            'total': len(final),
         }
-        return render(request, 'hotel-listing.html', myDict)
-
+        request.session['resp'] = myDict
+        return redirect('/hotels')
 
     return render(request, 'index.html')
 
 
 def hotelListing(request):
     hotels = Hotels.objects.all().values()
+    # print("response=",response1)
+    if request.session['resp'] is not None:
+        response1 = request.session['resp']
+
+        request.session['resp'] = None
+        return render(request, 'hotel-listing.html', response1)
+
     if request.method == 'POST':
         print(request.POST)
-        data=request.POST
-        search=Search(destination=data['destination'],checkInCheckOut=data['checkincheckout'],rooms=data['rooms'])
+        data = request.POST
+        search = Search(destination=data['destination'],
+                        checkInCheckOut=data['checkincheckout'], rooms=data['rooms'])
         search.save()
 
-        final=[]
-        rooms=[]
+        final = []
+        rooms = []
 
         for hotel in hotels:
-            if int(hotel['bedroomsAvailable'])>=int(data['rooms']):
+            if int(hotel['bedroomsAvailable']) >= int(data['rooms']):
                 rooms.append(hotel)
 
         for hotel in rooms:
-            name=hotel['name']    
+            name = hotel['name']
             if data['destination'].lower() in name.lower() or data['destination'].lower() in hotel['location'].lower():
                 final.append(hotel)
 
         myDict = {
-        'hotels': final,
-        'total': len(final),
+            'hotels': final,
+            'total': len(final),
         }
         return render(request, 'hotel-listing.html', myDict)
 
