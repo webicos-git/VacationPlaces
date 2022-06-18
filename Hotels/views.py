@@ -37,13 +37,18 @@ def index(request):
 
 def hotelListing(request):
     hotels = Hotels.objects.all().values()
-    # print("response=",response1)
+    print("response=")
     try:
-        if request.session['resp'] is not None:
-            response1 = request.session['resp']
-
-            request.session['resp'] = None
-            return render(request, 'hotel-listing.html', response1)
+        if request.session.get('resp') is None:
+            myDict = {
+            'hotels': hotels,
+            'total': len(hotels),
+        }
+            return render(request, 'hotel-listing.html', myDict)
+        response1 = request.session['resp']
+        print(response1)
+        request.session['resp'] = None
+        return render(request, 'hotel-listing.html', response1)
     except:
         if request.method == 'POST':
             print(request.POST)
@@ -76,6 +81,8 @@ def hotelListing(request):
         }
         return render(request, 'hotel-listing.html', myDict)
 
+    # return render(request, 'hotel-listing.html')
+
 
 def hotelSingle(request, id):
 
@@ -99,11 +106,14 @@ def contact(request):
         return render(request, 'index.html', {'message': "Form Submitted Successfully"})
     return render(request, 'contact.html')
 
+
 def privacyPolicy(request):
     return render(request, 'privacy-policy.html')
 
+
 def termsAndCondition(request):
     return render(request, 'terms-and-conditions.html')
+
 
 def privacyStatement(request):
     return render(request, 'privacy-statement.html')

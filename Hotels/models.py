@@ -45,8 +45,9 @@ class Hotels(models.Model):
     location = models.CharField(max_length=100)
     whatToExpect = models.TextField()
 
-    iframe=models.TextField(default="")
-    ratings= models.IntegerField(default=0)
+    iframe = models.TextField(default="")
+    ratings = models.IntegerField(default=0)
+
     def __str__(self):
         return self.name
 
@@ -54,6 +55,7 @@ class Hotels(models.Model):
 class Images(models.Model):
     hotel = models.ForeignKey(Hotels, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='hotelimages/', null=True, blank=True)
+
     def __str__(self):
         return self.hotel.name
 
@@ -71,10 +73,10 @@ class ContactUs(models.Model):
 
 class Search(models.Model):
     destination = models.CharField(max_length=500)
-    checkInCheckOut=models.CharField(max_length=500)
-    rooms= models.IntegerField()
+    checkInCheckOut = models.CharField(max_length=500)
+    rooms = models.IntegerField()
     date = date = models.DateTimeField(
         default=datetime.datetime.now(), blank=True)
-    def __str__(self):
-        return self.destination    
 
+    def __str__(self):
+        return self.destination

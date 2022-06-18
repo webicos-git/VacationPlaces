@@ -132,10 +132,10 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/var/www/html/project/venv/VacationPlaces/Resources'
+# STATIC_ROOT = '/var/www/html/project/venv/VacationPlaces/Resources'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'Resources'),
 ]
 
 MEDIA_URL = '/media/'
