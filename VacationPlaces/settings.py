@@ -130,9 +130,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
 STATIC_URL = '/static/'
+STATIC_ROOT = '/var/www/html/project/venv/VacationPlaces/Resources'
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'Resources'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 MEDIA_URL = '/media/'
