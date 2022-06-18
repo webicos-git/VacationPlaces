@@ -37,43 +37,51 @@ def index(request):
 
 def hotelListing(request):
     hotels = Hotels.objects.all().values()
-    # print("response=",response1)
-    if request.session['resp'] is not None:
+    print("response=")
+    try:
+        if request.session.get('resp') is None:
+            myDict = {
+            'hotels': hotels,
+            'total': len(hotels),
+        }
+            return render(request, 'hotel-listing.html', myDict)
         response1 = request.session['resp']
-
+        print(response1)
         request.session['resp'] = None
         return render(request, 'hotel-listing.html', response1)
+    except:
+        if request.method == 'POST':
+            print(request.POST)
+            data = request.POST
+            search = Search(destination=data['destination'],
+                            checkInCheckOut=data['checkincheckout'], rooms=data['rooms'])
+            search.save()
 
-    if request.method == 'POST':
-        print(request.POST)
-        data = request.POST
-        search = Search(destination=data['destination'],
-                        checkInCheckOut=data['checkincheckout'], rooms=data['rooms'])
-        search.save()
+            final = []
+            rooms = []
 
-        final = []
-        rooms = []
+            for hotel in hotels:
+                if int(hotel['bedroomsAvailable']) >= int(data['rooms']):
+                    rooms.append(hotel)
 
-        for hotel in hotels:
-            if int(hotel['bedroomsAvailable']) >= int(data['rooms']):
-                rooms.append(hotel)
+            for hotel in rooms:
+                name = hotel['name']
+                if data['destination'].lower() in name.lower() or data['destination'].lower() in hotel['location'].lower():
+                    final.append(hotel)
 
-        for hotel in rooms:
-            name = hotel['name']
-            if data['destination'].lower() in name.lower() or data['destination'].lower() in hotel['location'].lower():
-                final.append(hotel)
+            myDict = {
+                'hotels': final,
+                'total': len(final),
+            }
+            return render(request, 'hotel-listing.html', myDict)
 
         myDict = {
-            'hotels': final,
-            'total': len(final),
+            'hotels': hotels,
+            'total': len(hotels),
         }
         return render(request, 'hotel-listing.html', myDict)
 
-    myDict = {
-        'hotels': hotels,
-        'total': len(hotels),
-    }
-    return render(request, 'hotel-listing.html', myDict)
+    # return render(request, 'hotel-listing.html')
 
 
 def hotelSingle(request, id):
@@ -106,11 +114,14 @@ def contact(request):
         return render(request, 'index.html', {'message': "Form Submitted Successfully"})
     return render(request, 'contact.html')
 
+
 def privacyPolicy(request):
     return render(request, 'privacy-policy.html')
 
+
 def termsAndCondition(request):
     return render(request, 'terms-and-conditions.html')
+
 
 def privacyStatement(request):
     return render(request, 'privacy-statement.html')

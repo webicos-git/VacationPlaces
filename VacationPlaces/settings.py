@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-zgfmo&$)$xo(hz25g!(8ozv8n+7@ujcc=ta93w#3r5)(6b@_0x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -130,7 +130,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
 STATIC_URL = '/static/'
+# STATIC_ROOT = '/var/www/html/project/venv/VacationPlaces/Resources'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'Resources'),
 ]
