@@ -97,3 +97,12 @@ def contact(request):
         contactUs.save()
         return render(request, 'index.html', {'message': "Form Submitted Successfully"})
     return render(request, 'contact.html')
+
+def privacyPolicy(request):
+    return render(request, 'privacy-policy.html')
+
+def termsAndCondition(request):
+    return render(request, 'terms-and-conditions.html')
+
+def privacyStatement(request):
+    return render(request, 'privacy-statement.html')

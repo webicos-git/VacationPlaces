@@ -34308,10 +34308,6 @@ label.btn {
           transform: rotate(-180deg);
 }
 
-.dropdown-toggle::after {
-  display: none;
-}
-
 /* Positions */
 .dropdown-menu-right {
   right: 0;
@@ -42849,6 +42845,10 @@ Letter Spacing
   100% {
     opacity: 1;
   }
+}
+
+.dropdown-toggle::after, #basicDropdownClickInvoker::after {
+  display: none;
 }
 
 .room {
