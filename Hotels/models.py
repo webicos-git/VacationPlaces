@@ -45,8 +45,8 @@ class Hotels(models.Model):
     location = models.CharField(max_length=100)
     whatToExpect = models.TextField()
 
-    iframe = models.TextField(default="")
-    ratings = models.IntegerField(default=0)
+    mapLink=models.TextField(default="")
+    ratings= models.IntegerField(default=0)
 
     def __str__(self):
         return self.name

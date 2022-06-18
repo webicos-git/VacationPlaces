@@ -89,9 +89,17 @@ def hotelSingle(request, id):
     hotel = Hotels.objects.all().get(id=id)
     hotels = Hotels.objects.all().values()
     print(type(hotel))
+    imageList = []
+
+    images = Images.objects.all().values()
+    for image in images:
+        if image['hotel_id'] == int(id):
+            imageList.append(image)
+    print("imageList",images)
     myDict = {
         'hotel': hotel,
-        'hotels': hotels
+        'hotels': hotels,
+        'images': imageList
     }
     return render(request, 'single-hotel.html', myDict)
 

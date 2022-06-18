@@ -37858,13 +37858,13 @@ label.btn {
 }
 
 .u-slick__pagination:not(.u-slick__pagination--block) {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  pointer-events: none;
+  /*display: -ms-flexbox;*/
+  display: none;
+  /*-ms-flex-pack: center;*/
+  /*    justify-content: center;*/
+  /*-ms-flex-align: center;*/
+  /*    align-items: center;*/
+  /*pointer-events: none;*/
 }
 
 .u-slick__pagination li {
