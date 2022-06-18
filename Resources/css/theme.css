@@ -40618,7 +40618,7 @@ label.btn {
     border-bottom: 1px solid #e7eaf3 !important;
   }
   .border-xl-left {
-    border-left: 1px solid #e7eaf3 !important;
+    border: none;
   }
 }
 
