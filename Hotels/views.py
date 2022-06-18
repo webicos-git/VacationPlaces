@@ -37,9 +37,10 @@ def index(request):
 
 def hotelListing(request):
     hotels = Hotels.objects.all().values()
-    response1 = request.session['resp']
     # print("response=",response1)
-    if response1 is not None:
+    if request.session['resp'] is not None:
+        response1 = request.session['resp']
+
         request.session['resp'] = None
         return render(request, 'hotel-listing.html', response1)
 
