@@ -40,12 +40,12 @@
                               <i class="flaticon-calendar text-primary font-weight-semi-bold"></i>
                             </span>
                           </div>
-                          <input class="js-range-datepicker font-weight-medium font-size-15 ml-1 shadow-none form-control hero-form bg-transparent border-0 flatpickr-input p-0" type="text" placeholder="July 7/2019" aria-label="July 7/2019"
+                          <input class="js-range-datepicker font-weight-medium font-size-15 ml-1 shadow-none form-control hero-form bg-transparent border-0 flatpickr-input p-0" type="text"
+                                 placeholder="Select Date"
                                  data-rp-wrapper="#datepickerWrapperPick"
                                  data-rp-type="range"
                                  data-rp-date-format="M d / Y"
-                                 name="checkincheckout"
-                                 data-rp-default-date='["Jul 7 / 2020", "Aug 25 / 2020"]'> 
+                                 name="checkincheckout">
                                  
                         </div>
                         <!-- End Datepicker -->
@@ -54,7 +54,7 @@
                     <!-- End Input -->
 
                     <!-- Input -->
-                    <span class="d-block text-gray-1 font-weight-normal mb-0 text-left">Rooms and Guests</span>
+                    <span class="d-block text-gray-1 font-weight-normal mb-0 text-left">Rooms</span>
                     <div class="mb-4 position-relative">
                       <div class="border-bottom border-width-2 border-color-1">
                         <a id="basicDropdownClickInvoker" class="dropdown-nav-link dropdown-toggle flex-horizontal-center pt-3 pb-2" href="javascript:;" role="button"
@@ -70,55 +70,15 @@
                            data-unfold-animation-in="slideInUp"
                            data-unfold-animation-out="fadeOut">
                           <i class="flaticon-add-group d-flex align-items-center mr-3 font-size-20 text-primary font-weight-semi-bold"></i>
-                          <span class="text-black font-weight-medium font-size-15 mr-auto">2 Rooms - 3 Guests</span>
+<!--                          <span id="rooms_input" class="text-black font-weight-medium font-size-15 mr-auto">2 Rooms</span>-->
+                          <input
+                            class="room"
+                            type="number"
+                            pattern="/^-?\d+\.?\d*$/"
+                            onKeyPress="if(this.value.length==2) return false;"
+                            name="rooms"
+                            value="2">
                         </a>
-                        <div id="basicDropdownClick" class="dropdown-menu dropdown-unfold col m-0" aria-labelledby="basicDropdownClickInvoker">
-                          <div class="w-100 py-2 px-3 mb-3">
-                            <div class="js-quantity mx-3 row align-items-center justify-content-between">
-                              <span class="d-block font-size-16 text-secondary font-weight-medium">Rooms</span>
-                              <div class="d-flex">
-                                <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
-                                  <small class="fas fa-minus btn-icon__inner"></small>
-                                </a>
-                                <input name="rooms" class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" value="1">
-                                <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
-                                  <small class="fas fa-plus btn-icon__inner"></small>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="w-100 py-2 px-3 mb-3">
-                            <div class="js-quantity mx-3 row align-items-center justify-content-between">
-                              <span class="d-block font-size-16 text-secondary font-weight-medium">Adults</span>
-                              <div class="d-flex">
-                                <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
-                                  <small class="fas fa-minus btn-icon__inner"></small>
-                                </a>
-                                <input class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" value="1">
-                                <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
-                                  <small class="fas fa-plus btn-icon__inner"></small>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="w-100 py-2 px-3">
-                            <div class="js-quantity mx-3 row align-items-center justify-content-between">
-                              <span class="d-block font-size-16 text-secondary font-weight-medium">Child</span>
-                              <div class="d-flex">
-                                <a class="js-minus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
-                                  <small class="fas fa-minus btn-icon__inner"></small>
-                                </a>
-                                <input class="js-result form-control h-auto border-0 rounded p-0 max-width-6 text-center" type="text" value="1">
-                                <a class="js-plus btn btn-icon btn-medium btn-outline-secondary rounded-circle" href="javascript:;">
-                                  <small class="fas fa-plus btn-icon__inner"></small>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="w-100 text-right py-1 pr-5">
-                            <a class="text-primary font-weight-semi-bold font-size-16" href="#">Done</a>
-                          </div>
-                        </div>
                       </div>
                     </div>
                     <!-- End Input -->
