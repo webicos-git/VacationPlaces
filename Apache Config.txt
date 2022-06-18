@@ -1,0 +1,23 @@
+<VirtualHost *:80>
+
+<Directory /var/www/html/project/venv/VacationPlaces/VacationPlaces>
+        <Files wsgi.py>
+            Require all granted
+        </Files>
+    </Directory>
+
+    WSGIDaemonProcess mysite python-path=/var/www/html/project/venv/VacationPlaces python-home=/var/www/html/project/venv
+    WSGIProcessGroup mysite
+    WSGIScriptAlias / /var/www/html/project/venv/VacationPlaces/VacationPlaces/wsgi.py
+
+    Alias /static /var/www/html/project/venv/VacationPlaces/Resources
+    <Directory /var/www/html/project/venv/VacationPlaces/Resources>
+        Require all granted
+    </Directory>
+
+    Alias /media /var/www/html/project/venv/VacationPlaces/media
+    <Directory /var/www/html/project/venv/VacationPlaces/media>
+        Require all granted
+    </Directory>
+    
+</VirtualHost>
