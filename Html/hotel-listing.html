@@ -26,7 +26,7 @@
                     <div class="mb-4">
                       <div class="input-group border-bottom border-width-2 border-color-1">
                         <i class="flaticon-pin-1 d-flex align-items-center mr-2 text-primary font-weight-semi-bold font-size-22"></i>
-                        <input type="text" name="destination" class="form-control font-weight-medium font-size-15 shadow-none hero-form border-0 p-0" placeholder="Where are you going?" aria-label="Keyword or title" aria-describedby="keywordInputAddon">
+                        <input type="text" name="destination" class="form-control font-weight-medium font-size-15 shadow-none hero-form border-0 p-0" placeholder="Where are you going?" aria-label="Keyword or title" aria-describedby="keywordInputAddon" required>
                       </div>
                     </div>
                     <!-- End Input -->
@@ -506,32 +506,11 @@
                                  data-pagi-classes="js-pagination text-center u-slick__pagination u-slick__pagination--white position-absolute right-0 bottom-0 left-0 mb-3 mb-0">
                               <div class="js-slide">
                                 <a href="{% url 'hotelSingle' hotel.id %}" class="d-block gradient-overlay-half-bg-gradient-v5">
-                                  <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
-                                </a>
-                              </div>
-                              <div class="js-slide">
-                                <a href="{% url 'hotelSingle' hotel.id %}" class="d-block gradient-overlay-half-bg-gradient-v5">
-                                  <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
-                                </a>
-                              </div>
-                              <div class="js-slide">
-                                <a href="{% url 'hotelSingle' hotel.id %}" class="d-block gradient-overlay-half-bg-gradient-v5">
-                                  <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
-                                </a>
-                              </div>
-                              <div class="js-slide">
-                                <a href="{% url 'hotelSingle' hotel.id %}" class="d-block gradient-overlay-half-bg-gradient-v5">
-                                  <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
-                                </a>
-                              </div>
-                              <div class="js-slide">
-                                <a href="{% url 'hotelSingle' hotel.id %}" class="d-block gradient-overlay-half-bg-gradient-v5">
-                                  <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
-                                </a>
-                              </div>
-                              <div class="js-slide">
-                                <a href="{% url 'hotelSingle' hotel.id %}" class="d-block gradient-overlay-half-bg-gradient-v5">
-                                  <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
+                                  <img
+                                    class="img-fluid min-height-230 card-img-top"
+                                    src="media/{{ hotel.mainImage }}"
+                                    width="300"
+                                    height="230">
                                 </a>
                               </div>
                             </div>
@@ -628,12 +607,8 @@
                     <div class="card-body pl-3 pr-4 pt-2 pb-3">
                       <div class="ml-1 mb-2">
                         <div class="d-inline-flex align-items-center font-size-13 text-lh-1 text-primary letter-spacing-3">
-                          <div class="green-lighter">
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star"></small>
+                          <div  id="starRatings{{forloop.counter}}" class="green-lighter">
+                            <!-- script for showing the stars -->
                           </div>
                         </div>
                       </div>
@@ -658,6 +633,15 @@
                     </div>
                   </div>
                 </div>
+                <script>
+                  $(document).ready(function() {
+                    let range1 = parseInt("{{hotel.ratings}}");
+                    console.log(range1);
+                    for (let i = 0; i < range1; i++) {
+                      $("#starRatings"+"{{forloop.counter}}").append(`<small class="fas fa-star"></small>`);
+                    }
+                  });
+                </script>
                 {% endfor %}
               </div>
             </div>
