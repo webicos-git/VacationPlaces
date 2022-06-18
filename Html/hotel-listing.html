@@ -505,32 +505,32 @@
                                  data-arrow-right-classes="flaticon-next u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right"
                                  data-pagi-classes="js-pagination text-center u-slick__pagination u-slick__pagination--white position-absolute right-0 bottom-0 left-0 mb-3 mb-0">
                               <div class="js-slide">
-                                <a href="../hotels/hotel-single-v1.html" class="d-block gradient-overlay-half-bg-gradient-v5">
+                                <a href="{% url 'hotelSingle' hotel.id %}" class="d-block gradient-overlay-half-bg-gradient-v5">
                                   <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
                                 </a>
                               </div>
                               <div class="js-slide">
-                                <a href="../hotels/hotel-single-v1.html" class="d-block gradient-overlay-half-bg-gradient-v5">
+                                <a href="{% url 'hotelSingle' hotel.id %}" class="d-block gradient-overlay-half-bg-gradient-v5">
                                   <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
                                 </a>
                               </div>
                               <div class="js-slide">
-                                <a href="../hotels/hotel-single-v1.html" class="d-block gradient-overlay-half-bg-gradient-v5">
+                                <a href="{% url 'hotelSingle' hotel.id %}" class="d-block gradient-overlay-half-bg-gradient-v5">
                                   <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
                                 </a>
                               </div>
                               <div class="js-slide">
-                                <a href="../hotels/hotel-single-v1.html" class="d-block gradient-overlay-half-bg-gradient-v5">
+                                <a href="{% url 'hotelSingle' hotel.id %}" class="d-block gradient-overlay-half-bg-gradient-v5">
                                   <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
                                 </a>
                               </div>
                               <div class="js-slide">
-                                <a href="../hotels/hotel-single-v1.html" class="d-block gradient-overlay-half-bg-gradient-v5">
+                                <a href="{% url 'hotelSingle' hotel.id %}" class="d-block gradient-overlay-half-bg-gradient-v5">
                                   <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
                                 </a>
                               </div>
                               <div class="js-slide">
-                                <a href="../hotels/hotel-single-v1.html" class="d-block gradient-overlay-half-bg-gradient-v5">
+                                <a href="{% url 'hotelSingle' hotel.id %}" class="d-block gradient-overlay-half-bg-gradient-v5">
                                   <img class="img-fluid min-height-230 card-img-top" src="{% static 'img/300x230/img58.jpg' %}">
                                 </a>
                               </div>
@@ -551,11 +551,11 @@
                               <small class="fas fa-star font-size-10"></small>
                           </span>
                           </div>
-                          <a href="/hotelSingle">
+                          <a href="{% url 'hotelSingle' hotel.id %}">
                             <span class="font-weight-medium font-size-17 text-dark d-flex mb-1">{{ hotel.name }}</span>
                           </a>
                           <div class="card-body p-0">
-                            <a href="../hotels/hotel-single-v1.html" class="d-block mb-3">
+                            <a href="{% url 'hotelSingle' hotel.id %}" class="d-block mb-3">
                               <div class="d-flex flex-wrap flex-xl-nowrap align-items-center font-size-14 text-gray-1">
                                 <i class="icon flaticon-placeholder mr-2 font-size-20"></i> {{ hotel.location }}
                               </div>
@@ -615,11 +615,6 @@
                       <a href="{% url 'hotelSingle' hotel.id %}" class="d-block gradient-overlay-half-bg-gradient-v5">
                         <img class="min-height-230 bg-img-hero card-img-top" src="media/{{ hotel.mainImage }}" alt="img">
                       </a>
-                      <div class="position-absolute top-0 right-0 pt-3 pr-3">
-                        <button type="button" class="btn btn-sm btn-icon text-white rounded-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Save for later">
-                          <span class="flaticon-valentine-heart"></span>
-                        </button>
-                      </div>
                       <div class="position-absolute bottom-0 left-0 right-0">
                         <div class="px-4 pb-3">
                           <a href="{% url 'hotelSingle' hotel.id %}" class="d-block">
