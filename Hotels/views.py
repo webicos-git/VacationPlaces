@@ -37,9 +37,11 @@ def index(request):
 
 def hotelListing(request):
     hotels = Hotels.objects.all().values()
-    print("response=")
+    # print("response=")
     try:
+        #if session is not there
         if request.session.get('resp') is None:
+            #if method is post measns form submitted
             if request.method == 'POST':
                 print(request.POST)
                 data = request.POST
@@ -64,6 +66,13 @@ def hotelListing(request):
                     'total': len(final),
                 }
                 return render(request, 'hotel-listing.html', myDict)
+            #form not submitted , normal flow    
+            myDict = {
+                'hotels': hotels,
+                'total': len(hotels),
+            }
+            return render(request, 'hotel-listing.html', myDict)
+        #If session is there
         response1 = request.session['resp']
         print(response1)
         request.session['resp'] = None
@@ -114,7 +123,7 @@ def hotelSingle(request, id):
     for image in images:
         if image['hotel_id'] == int(id):
             imageList.append(image)
-    print("imageList",images)
+    print("imageList", images)
     myDict = {
         'hotel': hotel,
         'hotels': hotels,
