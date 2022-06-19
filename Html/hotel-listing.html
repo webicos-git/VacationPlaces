@@ -181,7 +181,7 @@
                         <button type="button" class="btn btn-link btn-block card-btn py-2 px-5 text-lh-3 collapsed" data-toggle="collapse" data-target="#shopCardOne" aria-expanded="false" aria-controls="shopCardOne">
                           <span class="row align-items-center">
                             <span class="col-9">
-                              <span class="d-block font-size-lg-15 font-size-17 font-weight-bold text-dark">Price Range ($)</span>
+                              <span class="d-block font-size-lg-15 font-size-17 font-weight-bold text-dark">Price Range (₹)</span>
                             </span>
                             <span class="col-3 text-right">
                               <span class="card-btn-arrow">
@@ -195,10 +195,10 @@
                     <div id="shopCardOne" class="collapse show" aria-labelledby="shopCardHeadingOne" data-parent="#shopCartAccordion">
                       <div class="card-body pt-0 px-5">
                         <div class="pb-3 mb-1 d-flex text-lh-1">
-                          <span>£</span>
+                          <span>₹</span>
                           <span id="rangeSliderExample3MinResult" class="">200</span>
                           <span class="mx-0dot5"> — </span>
-                          <span>£</span>
+                          <span>₹</span>
                           <span id="rangeSliderExample3MaxResult" class="">3500</span>
                         </div>
                         <input class="js-range-slider" type="range"
@@ -212,6 +212,8 @@
                                data-from="200"
                                data-to="3456"
                                data-prefix="$"
+                               id="range"
+                               min="200" max="1000"
                                data-result-min="#rangeSliderExample3MinResult"
                                data-result-max="#rangeSliderExample3MaxResult">
                       </div>
