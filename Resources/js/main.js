@@ -47,3 +47,14 @@ $("#two").change(function() {
         $("#id3").css("display", "block");
     }
 });
+
+$('#range').change(function(){
+    console.log($('#range').val());
+    let max=$('#range').val();
+    $("#rangeSliderExample3MaxResult").text(max);
+    let minAmount=$("#rangeSliderExample3MinResult").text();
+    let maxAmount=$("#rangeSliderExample3MaxResult").text();
+    
+
+
+    });
