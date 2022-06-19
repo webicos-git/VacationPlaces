@@ -39,9 +39,9 @@ def hotelListing(request):
     hotels = Hotels.objects.all().values()
     # print("response=")
     try:
-        #if session is not there
+        # if session is not there
         if request.session.get('resp') is None:
-            #if method is post measns form submitted
+            # if method is post measns form submitted
             if request.method == 'POST':
                 print(request.POST)
                 data = request.POST
@@ -66,13 +66,13 @@ def hotelListing(request):
                     'total': len(final),
                 }
                 return render(request, 'hotel-listing.html', myDict)
-            #form not submitted , normal flow    
+            # form not submitted , normal flow
             myDict = {
                 'hotels': hotels,
                 'total': len(hotels),
             }
             return render(request, 'hotel-listing.html', myDict)
-        #If session is there
+        # If session is there
         response1 = request.session['resp']
         print(response1)
         request.session['resp'] = None
@@ -139,7 +139,7 @@ def contact(request):
         contactUs = ContactUs(
             name=data['name'], email=data['email'], message=data['text'])
         contactUs.save()
-        return render(request, 'index.html', {'message': "Form Submitted Successfully"})
+        return redirect('/', {'message': "Form Submitted Successfully"})
     return render(request, 'contact.html')
 
 
