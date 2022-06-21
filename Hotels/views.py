@@ -153,3 +153,6 @@ def termsAndCondition(request):
 
 def privacyStatement(request):
     return render(request, 'privacy-statement.html')
+
+def aboutUs(request):
+    return render(request, 'about.html')

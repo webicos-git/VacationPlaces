@@ -42862,6 +42862,12 @@ Letter Spacing
   margin-left: .25rem;
 }
 
+ul.u-slick__pagination {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
 /*--------------------------------------------
   File for your custom SCSS & CSS style here.
 ----------------------------------------------*/

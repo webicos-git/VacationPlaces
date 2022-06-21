@@ -33,5 +33,6 @@ urlpatterns = [
     path('hotelSingle/<str:id>/', views.hotelSingle,name='hotelSingle'),
     path('privacy-policy', views.privacyPolicy),
     path('terms-and-conditions', views.termsAndCondition),
-    path('privacy-statement', views.privacyStatement)
+    path('privacy-statement', views.privacyStatement),
+    path('about-us', views.aboutUs)
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
