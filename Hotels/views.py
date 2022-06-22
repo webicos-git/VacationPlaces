@@ -111,7 +111,6 @@ def hotelListing(request):
 
     # return render(request, 'hotel-listing.html')
 
-
 def hotelSingle(request, id):
 
     hotel = Hotels.objects.all().get(id=id)

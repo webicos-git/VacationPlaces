@@ -117,20 +117,228 @@
               <div class="text-gray-1">{{ hotel.bedroomsAvailable }} Bedrooms</div>
             </div>
             <div class="col-md-6 mb-4">
-              <div class="font-weight-bold text-dark mb-2">Departure Time</div>
-              <div class="text-gray-1">3 Hours Before Flight Time</div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="font-weight-bold text-dark mb-2">Bathroom</div>
-              <div class="text-gray-1">6 Bathrooms</div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="font-weight-bold text-dark mb-3">Price Includes</div>
-              <div class="flex-horizontal-center mb-3 text-gray-1"><i class="flaticon-tick mr-3 font-size-16 text-primary"></i>Air fares</div>
-              <div class="flex-horizontal-center mb-3 text-gray-1"><i class="flaticon-tick mr-3 font-size-16 text-primary"></i>3 Nights Hotel Accomodation</div>
-              <div class="flex-horizontal-center mb-3 text-gray-1"><i class="flaticon-tick mr-3 font-size-16 text-primary"></i>Tour Guide</div>
-              <div class="flex-horizontal-center mb-3 text-gray-1"><i class="flaticon-tick mr-3 font-size-16 text-primary"></i>Entrance Fees</div>
-              <div class="flex-horizontal-center mb-3 text-gray-1"><i class="flaticon-tick mr-3 font-size-16 text-primary"></i>All transportation in destination location</div>
+              <div class="font-weight-bold text-dark mb-3" id="amenities">
+                <p class="font-weight-bold text-dark">Amenities provided and available/allowed things</p>
+              </div>
+
+
+              <script>
+                if("{{hotel.SwimmingPool}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Swimming Pool
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.Garden}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Garden
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.Breakfast}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Breakfast
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.ACRooms}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    AC Rooms
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.CleanAndSanitised}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Clean and Sanitised
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.Barbecue}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Barbeque
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.Parking}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Parking
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.Kitchen}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Kitchen
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.GeyserOrHotWater}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Hot Water
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.CommodeWestern}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Commode Western
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.CommodeIndian}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Commode Indian
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.BarORDrinks}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Bar or Drinks
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.Pets}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Pets (Allowed)
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.Party}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Party (Allowed)
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.LoudMusic}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Loud Music (Allowed)
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.LateNightParty}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Late Night Party (Allowed)
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.PoolParty}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Pool Party
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.ColoursInFestival}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Colours in Festival (Allowed)
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.OutsideFoodAllowed}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Outside Food Allowed (Allowed)
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.FrontDesk}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Front Desk
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.cleaner}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Cleaner
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.CareTaker}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Care Taker
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.Pickup}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Pickup available
+                  </div>
+                  `);
+                }
+
+                if("{{hotel.FoodOrder}}" == "True") {
+                  $('#amenities').append(`
+                  <div class="flex-horizontal-center mb-3 text-gray-1" id="airfare">
+                    <i class="flaticon-tick mr-3 font-size-16 text-primary"></i>
+                    Food Order
+                  </div>
+                  `);
+                }
+              </script>
             </div>
           </div>
         </div>
