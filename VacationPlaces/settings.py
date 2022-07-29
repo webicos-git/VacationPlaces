@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+# config = dotenv_values(".env") 
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -85,10 +88,10 @@ WSGI_APPLICATION = 'VacationPlaces.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'vacationplaces',
-        'USER': 'admin',
-        'PASSWORD': '12345678',
-        'HOST': 'vactionplaces1.cussmttaeeue.ap-south-1.rds.amazonaws.com',   # Or an IP Address that your DB is hosted on
+        'NAME': os.getenv("NAME"),
+        'USER': os.getenv("USER"),
+        'PASSWORD': os.getenv("PASSWORD"),
+        'HOST': os.getenv("DB_HOST"),   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }

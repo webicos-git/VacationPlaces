@@ -1,5 +1,0 @@
-db instance identifier: vactionplaces
-master username: admin
-masteer password: 123456789
-intial database name: admin
-endpoint: vactionplaces.cussmttaeeue.ap-south-1.rds.amazonaws.com
