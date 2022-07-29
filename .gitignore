@@ -1,1 +1,4 @@
 /VacationPlaces/.env
+/VacationPlaces/__pycache__/*
+/Hotes/__pycache__/*
+/.idea
