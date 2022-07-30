@@ -12,10 +12,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 # config = dotenv_values(".env") 
-load_dotenv()
+# load_dotenv()
+from .var import *
 
+print(DB_HOST,NAME,PORT,USER)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -88,11 +90,11 @@ WSGI_APPLICATION = 'VacationPlaces.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': os.getenv("NAME"),
-        'USER': 'admin',
-        'PASSWORD': os.getenv("PASSWORD"),
-        'HOST': os.getenv("DB_HOST"),   # Or an IP Address that your DB is hosted on
-        'PORT': os.getenv("PORT"),
+        'NAME': NAME,
+        'USER': USER,
+        'PASSWORD': PASSWORD,
+        'HOST': DB_HOST,   # Or an IP Address that your DB is hosted on
+        'PORT': PORT,
     }
 }
 
